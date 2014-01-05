@@ -1,3 +1,4 @@
+default['memcached']['enabled']           = "YES"
 default['memcached']['logfile']           = "/var/log/memcached.log"
 default['memcached']['memory']            = "128"
 default['memcached']['port']              = "11211"

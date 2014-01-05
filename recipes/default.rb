@@ -18,3 +18,10 @@ template "/etc/memcached.conf" do
  group 0
  mode 00644
 end
+
+template "/etc/default/memcached" do
+ source "sysconfig.conf.erb"
+ owner "root"
+ group 0
+ mode 00644
+end
