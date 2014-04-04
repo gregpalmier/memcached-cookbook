@@ -6,10 +6,15 @@
 # 
 # All rights reserved - Do Not Redistribute
 #
-%w{memcached php5-memcached}.each do |pkg|
+%w{memcached}.each do |pkg|
   package pkg do
     action :upgrade
   end
+end
+
+service 'memcached' do
+  supports :status => true, :restart => true, :stop => true
+  action [ :enable, :start ]
 end
 
 template "/etc/memcached.conf" do
