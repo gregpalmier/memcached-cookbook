@@ -12,11 +12,6 @@
   end
 end
 
-service 'memcached' do
-  supports :status => true, :restart => true, :stop => true
-  action [ :enable, :start ]
-end
-
 template "#{node['memcached']['server_config']}" do
  source "sysconfig.conf.erb"
  owner "root"
@@ -31,4 +26,9 @@ template "#{node['memcached']['service_config']}" do
  group 0
  mode 00644
  notifies :restart, "service[memcached]", :immediately
+end
+
+service 'memcached' do
+  supports :status => true, :restart => true, :stop => true
+  action [ :enable, :start ]
 end
