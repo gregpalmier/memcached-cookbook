@@ -17,16 +17,18 @@ service 'memcached' do
   action [ :enable, :start ]
 end
 
-template "/etc/memcached.conf" do
- source "memcached.conf.erb"
- owner "root"
- group 0
- mode 00644
-end
-
-template "/etc/default/memcached" do
+template "#{node['memcached']['server_config']}" do
  source "sysconfig.conf.erb"
  owner "root"
  group 0
  mode 00644
+ notifies :restart, "service[memcached]", :immediately
+end
+
+template "#{node['memcached']['service_config']}" do
+ source "memcached.conf.erb"
+ owner "root"
+ group 0
+ mode 00644
+ notifies :restart, "service[memcached]", :immediately
 end
