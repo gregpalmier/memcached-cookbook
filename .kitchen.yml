@@ -23,5 +23,5 @@ platforms:
 
 suites:
 - name: default
-  run_list: ['recipe[memcached]']
+  run_list: ['recipe[memcached-cookbook]']
   attributes: {}
