@@ -22,7 +22,7 @@
   end
 end
 
-template "#{node['memcached']['server_config']}" do
+template node['memcached']['server_config'] do
   source 'sysconfig.conf.erb'
   owner 'root'
   group 0
@@ -30,7 +30,7 @@ template "#{node['memcached']['server_config']}" do
   notifies :restart, 'service[memcached]', :immediately
 end
 
-template "#{node['memcached']['service_config']}" do
+template node['memcached']['service_config'] do
   source 'memcached.conf.erb'
   owner 'root'
   group 0
