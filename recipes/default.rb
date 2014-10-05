@@ -16,7 +16,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-%w{memcached}.each do |pkg|
+%w(memcached).each do |pkg|
   package pkg do
     action :upgrade
   end
@@ -39,6 +39,6 @@ template "#{node['memcached']['service_config']}" do
 end
 
 service 'memcached' do
-  supports status: 'true', restart: 'true', stop: 'true'
+  supports :status => 'true', :restart => 'true', :stop => 'true'
   action [:enable, :start]
 end
