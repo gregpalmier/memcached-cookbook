@@ -53,5 +53,5 @@ Contributing
 
 License and Authors
 -------------------
-License: None.  Do as you wish.
+License: see LICENSE
 Authors: gregpalmier
