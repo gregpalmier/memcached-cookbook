@@ -15,5 +15,4 @@ when 'debian'
   default['memcached']['server_config']     = '/etc/default/memcached'
   default['memcached']['service_config']    = '/etc/memcached.conf'
   default['memcached']['user']              = 'www-data'
-else
 end
