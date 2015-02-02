@@ -39,6 +39,6 @@ template node['memcached']['service_config'] do
 end
 
 service 'memcached' do
-  supports :status => 'true', :restart => 'true', :stop => 'true'
+  supports status: 'true', restart: 'true', stop: 'true'
   action [:enable, :start]
 end

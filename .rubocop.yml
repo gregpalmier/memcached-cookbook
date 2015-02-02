@@ -14,7 +14,7 @@ LineLength:
   Max: 330
 
 HashSyntax:
-  EnforcedStyle: hash_rockets
+  EnforcedStyle: ruby19
 
 Documentation:
   Enabled: false
