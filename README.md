@@ -14,32 +14,39 @@ Usage
 
 In your Vagrantfile, customize these attributes with:
 
-```json
-    chef.json = {
-        :memcached => {
-          :memory => "64",
-      }
-    }
-```json
+```
+chef.json = {
+    memcached: {
+      memory: "64",
+  }
+}
+```
+
+Add the recipe to your run_list:
+```
+chef.run_list = [
+  'recipe[memcached-cookbook]'
+]
+```
 
 Attributes
 ----------
 
 Attributes include service level parameters and OS-level config
 
-```ruby
-default['memcached']['enabled']           = "yes"
-default['memcached']['logfile']           = "/var/log/memcached.log"
-default['memcached']['memory']            = "128"
-default['memcached']['port']              = "11211"
-default['memcached']['listen_ip']         = "127.0.0.1"
-default['memcached']['connection_limit']  = "1024"
+```
+default['memcached']['enabled']           = 'yes'
+default['memcached']['logfile']           = '/var/log/memcached.log'
+default['memcached']['memory']            = '128'
+default['memcached']['port']              = '11211'
+default['memcached']['listen_ip']         = '127.0.0.1'
+default['memcached']['connection_limit']  = '1024'
 ```
 
 Recipes
 -------
 
-No additional recipes yet.
+`default.rb` - Install Memcached.
 
 Contributing
 ------------
